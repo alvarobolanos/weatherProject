@@ -14,11 +14,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 //Routes
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html')
-});
+}); 
 
 app.post('/', function(req, res){
-
-    const apiKey = '32f9d1b5174bf4e2b4349e9867490a5e';
+    const apiKey = process.env.APIKEY;
     const units = "imperial";
     const query = req.body.cityName;
 
